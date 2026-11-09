@@ -9,9 +9,9 @@ sys.path.insert(0, str(ROOT))
 
 from retrieval.embeddings import embed_queries
 from retrieval.geo import Gazetteer, Place
-from retrieval.index import COLLECTION, INDEX
+from retrieval.index import COLLECTION, INDEX, QDRANT_URL
 
-FIELDS = ("chunk_id", "text", "page_title", "section", "url", "breadcrumb", "page_type")
+FIELDS = ("chunk_id", "text", "page_title", "section", "url", "breadcrumb", "page_type", "listing_ids")
 
 
 class Retriever:
@@ -19,7 +19,7 @@ class Retriever:
         from qdrant_client import QdrantClient
 
         self.model = model
-        self.client = QdrantClient(path=str(index_dir / model / "qdrant"))
+        self.client = QdrantClient(url=QDRANT_URL, timeout=60)
         self.gazetteer = Gazetteer.load(index_dir / "gazetteer.json")
 
     def search(self, question: str, k: int = 5, place: str | None = "auto",
