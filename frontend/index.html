@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoyaRAG — Accueil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="vr vr-home">
+
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: var(--grain); mix-blend-mode: multiply; z-index: 5">
+    <filter id="vr-grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
+    <rect width="100%" height="100%" filter="url(#vr-grain)"></rect>
+  </svg>
+
+  <header style="position: relative; z-index: 6; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink)" aria-label="VoyaRAG, accueil">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" style="color: var(--accent)"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width=".75" stroke-dasharray="1.5 2.5"></circle><path d="M16 5 L19 16 L16 27 L13 16 Z" fill="currentColor"></path><circle cx="16" cy="16" r="1.6" style="fill: var(--paper)"></circle></svg>
+      <span class="vr-serif" style="font-size: 23px; font-weight: 600; letter-spacing: -.01em; color: var(--ink)">VoyaRAG</span>
+    </a>
+  </header>
+
+  <main style="position: relative; z-index: 2; flex: 1 1 auto">
+    <section aria-labelledby="vr-h1" style="position: relative; min-height: 640px; display: flex; align-items: center">
+      <svg aria-hidden="true" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none">
+        <g transform="translate(1180 210)" fill="none" style="stroke: var(--topo)" stroke-width="1">
+          <path vector-effect="non-scaling-stroke" transform="scale(.32) rotate(10)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(.58) rotate(6)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(.86) rotate(2)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(1.18) rotate(-2)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(1.55) rotate(-6)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(1.98) rotate(-10)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+        </g>
+        <g transform="translate(200 600)" fill="none" style="stroke: var(--topo)" stroke-width="1">
+          <path vector-effect="non-scaling-stroke" transform="scale(.42) rotate(-20)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(.78) rotate(-24)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(1.18) rotate(-28)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+          <path vector-effect="non-scaling-stroke" transform="scale(1.62) rotate(-32)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+        </g>
+        <defs>
+          <mask id="vr-fp" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="700">
+            <path class="vr-draw" pathLength="1" d="M60 560C240 420 380 640 560 560S860 280 1060 300 1320 160 1400 120" fill="none" stroke="#fff" stroke-width="10"></path>
+          </mask>
+        </defs>
+        <path d="M60 560C240 420 380 640 560 560S860 280 1060 300 1320 160 1400 120" fill="none" style="stroke: var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 9" mask="url(#vr-fp)"></path>
+        <circle cx="60" cy="560" r="4" style="fill: var(--accent)"></circle>
+        <g class="vr-dot"><circle cx="1400" cy="120" r="6" style="fill: var(--paper); stroke: var(--accent)" stroke-width="2"></circle><circle cx="1400" cy="120" r="2" style="fill: var(--accent)"></circle></g>
+        <text x="80" y="590" class="vr-mono" style="fill: var(--ink2); font-size: 12px; letter-spacing: .08em">48.8566° N · 2.3522° E</text>
+        <text x="1230" y="96" class="vr-mono vr-dot" style="fill: var(--ink2); font-size: 12px; letter-spacing: .08em">45.7640° N · 4.8357° E</text>
+      </svg>
+
+      <div style="position: relative; width: 100%; max-width: 980px; margin: 0 auto; box-sizing: border-box; padding: 56px 20px 72px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center">
+        <p class="vr-mono vr-rise" style="margin: 0; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink2)">Votre carnet de voyage</p>
+        <h1 id="vr-h1" class="vr-serif vr-rise" style="margin: 0; font-size: clamp(48px, 9vw, 120px); line-height: .96; font-weight: 400; letter-spacing: -.03em; animation-delay: .08s">Où rêvez-vous <span style="font-style: italic; color: var(--accent)">d’aller</span>&nbsp;?</h1>
+        <p class="vr-rise" style="margin: 0; font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: var(--ink2); max-width: 34rem; animation-delay: .16s">Posez votre question comme à un ami qui connaît la région : on vous répond avec les bonnes adresses.</p>
+
+        <form id="vr-ask-form" role="search" action="chat.html" method="get" class="vr-rise" style="position: relative; width: 100%; max-width: 760px; margin-top: 6px; animation-delay: .24s">
+          <div style="filter: drop-shadow(0 22px 30px rgba(27,42,65,.18))">
+            <div class="vr-tag" style="position: relative; background: var(--card); padding: 12px 12px 12px 62px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; text-align: left">
+              <span class="vr-hole" aria-hidden="true" style="left: 22px; width: 18px; height: 18px; margin-top: -9px"></span>
+              <span aria-hidden="true" style="position: absolute; left: 52px; top: 12px; bottom: 12px; border-left: 1px dashed var(--line)"></span>
+              <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; padding-left: 8px">
+                <label for="vr-ask" class="vr-mono" style="font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink2)">Votre question</label>
+                <input id="vr-ask" name="q" class="vr-input" type="search" placeholder="Que faire à Lyon en 3 jours ?" autocomplete="off">
+              </div>
+              <button type="submit" class="vr-btn" style="flex: 0 0 auto">Partir
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <ul aria-label="Idées de questions" class="vr-rise" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; animation-delay: .32s">
+          <li><a class="vr-chip" href="chat.html?q=Que%20faire%20%C3%A0%20Lyon%20en%203%20jours%20%3F">Que faire à Lyon en 3 jours ?</a></li>
+          <li><a class="vr-chip" href="chat.html?q=Plages%20calmes%20en%20Corse">Plages calmes en Corse</a></li>
+          <li><a class="vr-chip" href="chat.html?q=O%C3%B9%20manger%20%C3%A0%20Marseille%20%3F">Où manger à Marseille ?</a></li>
+          <li><a class="vr-chip" href="chat.html?q=Randonn%C3%A9es%20dans%20les%20Alpes">Randonnées dans les Alpes</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="vr-h2" style="width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px 20px 96px; display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; border-top: 1px solid var(--line); padding-top: 28px">
+        <h2 id="vr-h2" class="vr-serif" style="margin: 0; font-size: clamp(30px, 4vw, 46px); font-weight: 400; letter-spacing: -.02em">Envie d’ailleurs <span style="font-style: italic">?</span></h2>
+        <span class="vr-mono" style="font-size: 12px; letter-spacing: .1em; color: var(--ink2)">QUATRE IDÉES POUR COMMENCER</span>
+      </div>
+
+      <div class="vr-cards">
+        <a class="vr-card vr-card-big" href="chat.html?q=Que%20faire%20%C3%A0%20Lyon%20en%203%20jours%20%3F" style="background: var(--ink); color: var(--paper)">
+          <svg aria-hidden="true" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5">
+            <g fill="none" stroke="currentColor" stroke-width="1" opacity=".35" transform="translate(150 190)">
+              <path vector-effect="non-scaling-stroke" transform="scale(.35)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+              <path vector-effect="non-scaling-stroke" transform="scale(.65) rotate(-8)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+              <path vector-effect="non-scaling-stroke" transform="scale(1) rotate(-16)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+            </g>
+            <path d="M200 0C220 80 250 140 270 200S300 300 296 400" fill="none" stroke="currentColor" stroke-width="3"></path>
+            <path d="M400 30C350 110 320 170 300 240S296 330 296 400" fill="none" stroke="currentColor" stroke-width="4"></path>
+          </svg>
+          <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+            <span class="vr-mono" style="font-size: 12px; letter-spacing: .1em; opacity: .85">45.7640° N · 4.8357° E</span>
+            <span class="vr-vig" aria-hidden="true"><svg width="112" height="82" viewBox="0 0 84 62"><rect width="84" height="62" style="fill: var(--map-land)"></rect><path d="M0 22H84M0 44H84M28 0V62M62 0V62" fill="none" style="stroke: var(--map-road)" stroke-width=".6"></path><path d="M22 0C28 14 34 26 37 36S43 52 42 62" fill="none" style="stroke: var(--map-water)" stroke-width="4"></path><path d="M68 0C59 14 53 26 49 36S44 52 42 62" fill="none" style="stroke: var(--map-water)" stroke-width="6"></path><circle cx="43" cy="30" r="7" fill="none" style="stroke: var(--map-pin)" stroke-width=".8"></circle><circle cx="43" cy="30" r="3.2" style="fill: var(--map-pin)"></circle></svg></span>
+          </div>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 10px">
+            <span class="vr-mono" style="font-size: 12px; letter-spacing: .14em; text-transform: uppercase; opacity: .85">Auvergne-Rhône-Alpes</span>
+            <h3 class="vr-serif" style="margin: 0; font-size: clamp(56px, 7vw, 96px); font-weight: 400; line-height: .9; letter-spacing: -.03em">Lyon</h3>
+            <p style="margin: 0; font-size: 18px; line-height: 1.5; max-width: 24rem">Traboules, bouchons et deux fleuves.</p>
+            <span class="vr-go" style="margin-top: 8px; font-size: 15px; font-weight: 600">Que faire en 3 jours →</span>
+          </div>
+        </a>
+
+        <a class="vr-card" href="chat.html?q=Plages%20calmes%20en%20Corse" style="background: var(--sage); color: var(--card); animation-delay: .1s">
+          <svg aria-hidden="true" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .4">
+            <path d="M190 30C215 40 222 70 218 100S232 150 222 180 200 240 176 262C160 250 150 220 154 190S140 140 150 110 168 40 190 30Z" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+            <path d="M20 220c20-8 40 8 60 0s40-8 60 0M20 244c20-8 40 8 60 0s40-8 60 0M20 268c20-8 40 8 60 0s40-8 60 0" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+          </svg>
+          <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px">
+            <span class="vr-mono" style="font-size: 12px; letter-spacing: .1em">42.0396° N · 9.0129° E</span>
+            <span class="vr-vig" aria-hidden="true"><svg width="84" height="62" viewBox="0 0 84 62"><rect width="84" height="62" style="fill: var(--map-water)"></rect><path d="M6 50c5-2 9 2 14 0M8 56c5-2 9 2 14 0M64 12c5-2 9 2 14 0" fill="none" style="stroke: var(--map-ink)" stroke-width=".6" opacity=".5"></path><path d="M48 5C54 7 56 15 55 23S59 35 57 43 52 55 46 59C42 56 40 49 41 41S37 29 39 21 44 5 48 5Z" style="fill: var(--map-land); stroke: var(--map-ink)" stroke-width=".7"></path><circle cx="44" cy="40" r="3" style="fill: var(--map-pin)"></circle></svg></span>
+          </div>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+            <h3 class="vr-serif" style="margin: 0; font-size: 44px; font-weight: 400; line-height: 1; letter-spacing: -.02em">Corse</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.5">Criques turquoise et sentiers de maquis.</p>
+            <span class="vr-go" style="font-size: 14px; font-weight: 600">Plages calmes →</span>
+          </div>
+        </a>
+
+        <a class="vr-card" href="chat.html?q=O%C3%B9%20manger%20%C3%A0%20Marseille%20%3F" style="background: var(--accent); color: var(--accent-ink); animation-delay: .18s">
+          <svg aria-hidden="true" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .35">
+            <circle cx="220" cy="70" r="34" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+            <path d="M0 190h300M0 210c25-8 50 8 75 0s50-8 75 0 50 8 75 0 50-8 75 0M0 234c25-8 50 8 75 0s50-8 75 0 50 8 75 0 50-8 75 0" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+            <path d="M60 190V120l14-20 14 20v70M150 190l20-50 20 50" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+          </svg>
+          <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px">
+            <span class="vr-mono" style="font-size: 12px; letter-spacing: .1em">43.2965° N · 5.3698° E</span>
+            <span class="vr-vig" aria-hidden="true"><svg width="84" height="62" viewBox="0 0 84 62"><rect width="84" height="62" style="fill: var(--map-land)"></rect><path d="M16 0L22 36M54 0L48 38M0 16H84" fill="none" style="stroke: var(--map-road)" stroke-width=".6"></path><path d="M0 36C8 34 14 40 22 37S32 44 38 40 42 34 46 40 56 46 62 42 74 46 84 40V62H0Z" style="fill: var(--map-water)"></path><path d="M38 40C40 34 44 34 46 40" fill="none" style="stroke: var(--map-ink)" stroke-width=".7"></path><circle cx="42" cy="36" r="3" style="fill: var(--map-pin)"></circle></svg></span>
+          </div>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+            <h3 class="vr-serif" style="margin: 0; font-size: 44px; font-weight: 400; line-height: 1; letter-spacing: -.02em">Marseille</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.5">Le Vieux-Port, les calanques, la bouillabaisse.</p>
+            <span class="vr-go" style="font-size: 14px; font-weight: 600">Où manger →</span>
+          </div>
+        </a>
+
+        <a class="vr-card" href="chat.html?q=Randonn%C3%A9es%20dans%20les%20Alpes" style="background: var(--sand); color: var(--ink); animation-delay: .26s">
+          <svg aria-hidden="true" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5">
+            <path d="M0 210L60 130 90 160 150 70 200 140 230 110 300 200" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            <path d="M130 98l20-28 18 26" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+            <path d="M0 210c40 20 80 10 120 30s100 0 180-20" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 5"></path>
+          </svg>
+          <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px">
+            <span class="vr-mono" style="font-size: 12px; letter-spacing: .1em">45.9237° N · 6.8694° E</span>
+            <span class="vr-vig" aria-hidden="true"><svg width="84" height="62" viewBox="0 0 84 62"><rect width="84" height="62" style="fill: var(--map-land)"></rect><path d="M0 54L18 32 28 42 44 14 58 36 66 28 84 48" fill="none" style="stroke: var(--map-ink)" stroke-width=".8" stroke-linejoin="round"></path><path d="M10 58L22 42 30 50 44 26 54 42 64 36 78 54" fill="none" style="stroke: var(--map-road)" stroke-width=".6" stroke-dasharray="1.5 2"></path><ellipse cx="22" cy="55" rx="8" ry="3.5" style="fill: var(--map-water)"></ellipse><circle cx="44" cy="20" r="3" style="fill: var(--map-pin)"></circle></svg></span>
+          </div>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+            <h3 class="vr-serif" style="margin: 0; font-size: 44px; font-weight: 400; line-height: 1; letter-spacing: -.02em">Alpes</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.5">Lacs d’altitude et nuits en refuge.</p>
+            <span class="vr-go" style="font-size: 14px; font-weight: 600">Randonnées →</span>
+          </div>
+        </a>
+
+        <a id="vr-surprise" class="vr-card" href="chat.html?q=Que%20faire%20%C3%A0%20Lyon%20en%203%20jours%20%3F" style="background: var(--card); color: var(--ink); border: 1px solid var(--line); animation-delay: .34s">
+          <svg aria-hidden="true" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5">
+            <circle cx="210" cy="110" r="60" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4"></circle>
+            <path d="M210 60l8 50-8 50-8-50z" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+          </svg>
+          <span class="vr-mono" style="position: relative; font-size: 12px; letter-spacing: .1em; color: var(--ink2)">??.???? N · ?.???? E</span>
+          <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+            <h3 class="vr-serif" style="margin: 0; font-size: 44px; font-weight: 400; font-style: italic; line-height: 1; letter-spacing: -.02em">Surprenez-moi</h3>
+            <p style="margin: 0; font-size: 16px; line-height: 1.5; color: var(--ink2)">Une destination au hasard, pour l’aventure.</p>
+            <span class="vr-go" style="font-size: 14px; font-weight: 600; color: var(--accent)">Tenter le coup →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position: relative; z-index: 2; border-top: 1px solid var(--line)">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 24px 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <p style="margin: 0; font-size: 14px; color: var(--ink2)">Contenus issus de <a href="https://fr.wikivoyage.org">Wikivoyage</a>, licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA</a>.</p>
+      <svg width="34" height="34" viewBox="0 0 72 72" fill="none" aria-hidden="true" style="color: var(--ink2)"><circle cx="36" cy="36" r="34" stroke="currentColor" stroke-width="1.5"></circle><path d="M36 8L41 36 36 64 31 36Z" fill="currentColor"></path><path d="M8 36L36 31 64 36 36 41Z" stroke="currentColor" stroke-width="1.5"></path></svg>
+    </div>
+  </footer>
+</div>
+<script src="js/home.js"></script>
+</body>
+</html>

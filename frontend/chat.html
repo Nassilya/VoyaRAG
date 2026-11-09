@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoyaRAG — Conversation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="vr vr-shell">
+  <svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none">
+    <g transform="translate(1260 220)" fill="none" style="stroke: var(--topo)" stroke-width="1">
+      <path vector-effect="non-scaling-stroke" transform="scale(.4) rotate(8)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+      <path vector-effect="non-scaling-stroke" transform="scale(.75) rotate(4)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+      <path vector-effect="non-scaling-stroke" transform="scale(1.12)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+      <path vector-effect="non-scaling-stroke" transform="scale(1.55) rotate(-4)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+    </g>
+    <g transform="translate(140 720)" fill="none" style="stroke: var(--topo)" stroke-width="1">
+      <path vector-effect="non-scaling-stroke" transform="scale(.5) rotate(-20)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+      <path vector-effect="non-scaling-stroke" transform="scale(.9) rotate(-24)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+      <path vector-effect="non-scaling-stroke" transform="scale(1.35) rotate(-28)" d="M-220 0C-220-120-80-180 20-160C140-135 200-50 180 30C160 120 40 170-60 150C-160 130-220 80-220 0Z"></path>
+    </g>
+  </svg>
+
+  <header style="position: relative; z-index: 3; flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px clamp(12px, 2.4vw, 24px); border-bottom: 1px solid var(--line); background: var(--paper)">
+    <a href="index.html" aria-label="VoyaRAG, retour à l’accueil" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink)">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" style="color: var(--accent)"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width=".75" stroke-dasharray="1.5 2.5"></circle><path d="M16 5 L19 16 L16 27 L13 16 Z" fill="currentColor"></path></svg>
+      <span class="vr-serif" style="font-size: 21px; font-weight: 600; color: var(--ink)">VoyaRAG</span>
+    </a>
+    <div style="display: flex; gap: 10px; align-items: center">
+      <span id="vr-demo" class="vr-badge" hidden title="Réponses d’exemple : l’API n’est pas encore branchée">Mode démo</span>
+      <a class="vr-ghost" href="index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg><span class="vr-ghost-label">Nouvelle conversation</span></a>
+    </div>
+  </header>
+
+  <main id="vr-thread" class="vr-thread" aria-label="Conversation" style="position: relative; z-index: 1">
+    <div id="vr-messages" class="vr-col" aria-live="polite" style="padding-top: 28px; padding-bottom: 28px; display: flex; flex-direction: column; gap: 26px"></div>
+  </main>
+
+  <footer style="position: relative; z-index: 3; flex: none; background: var(--paper); border-top: 1px solid var(--line)">
+    <div class="vr-col" style="padding-top: 12px; padding-bottom: 14px; display: flex; flex-direction: column; gap: 10px">
+      <div id="vr-suggest" class="vr-suggest vr-scroll"></div>
+      <form id="vr-follow-form" style="filter: drop-shadow(0 14px 22px rgba(27,42,65,.14))">
+        <div class="vr-tag" style="position: relative; background: var(--card); padding: 8px 8px 8px 54px; display: flex; align-items: center; gap: 10px">
+          <span class="vr-hole" aria-hidden="true" style="left: 17px; width: 16px; height: 16px; margin-top: -8px"></span>
+          <label for="vr-follow" class="vr-sr">Votre message</label>
+          <input id="vr-follow" class="vr-input" type="text" placeholder="Posez une autre question…" autocomplete="off">
+          <button id="vr-send" type="submit" class="vr-btn" aria-label="Envoyer" style="padding: 0 18px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </form>
+      <p style="margin: 0; font-size: 12px; color: var(--ink2); text-align: center">Contenus issus de <a href="https://fr.wikivoyage.org">Wikivoyage</a>, licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA</a>.</p>
+    </div>
+  </footer>
+</div>
+<script src="js/mock.js"></script>
+<script src="js/api.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>
